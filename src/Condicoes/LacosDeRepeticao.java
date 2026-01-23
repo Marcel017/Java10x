@@ -1,40 +1,26 @@
 package Condicoes;
 
 public class LacosDeRepeticao {
+    // psvm -> atalho para criar essa linha abaixo
     public static void main(String[] args) {
 
-        /**
-         * Lacos de repeticao: Vao repetir infinitamente ou ate atingir o numero de parametro Desejado.
-         * WHILE = FOR
-         */
+        int chakraMaximo = 40;
+        int clonesFeitos = 0;
 
-        // While
-        // while (condicao) {tudo aqui vai acontencer}
+        // Vamos usar o FOR, que é mais comum quando sabemos o limite (40)
+        // for (inicio; condição; incremento)
+        for (int i = 1; i <= chakraMaximo + 1; i++) {
+            clonesFeitos = i;
 
-        /**
-         * adicinei um pouco de condicional, não estava no roteiro da aula, mas como a materia estava fresca na minha cabeça eu aprovei oque tinha aprendido para
-         * arrumar o erro de semantica e deixar o codigo em si mais intuitivo.
-         */
-
-        int numeroDeClones = 0;
-        int numeroMaximoDeClones = 40;
-
-        while (numeroDeClones <= numeroMaximoDeClones) {
-            numeroDeClones++;
-            while (numeroDeClones > 40) {
-                System.out.println("Naruto tentou fazer o clone " + numeroDeClones + ", mas está sem Chakra e Desmaiou!");
-                break;
+            // Se passou do limite (41)
+            if (clonesFeitos > chakraMaximo) {
+                System.out.println("Naruto tentou fazer o clone " + clonesFeitos + ", mas está sem Chakra e Desmaiou!");
+                break; // Sai do laço FOR imediatamente
             }
 
-            if (numeroDeClones <= 40) {
-                if (numeroDeClones == 1) {
-                    System.out.println("Naruto fez: " + numeroDeClones + " clone da sombra");
-                } else {
-                    System.out.println("Naruto fez: " + numeroDeClones + " clones da sombra");
-                }
-            }
+            String tipoClone = (clonesFeitos == 1) ? "clone" : "clones";
+
+            System.out.println("Naruto fez: " + clonesFeitos + " " + tipoClone + " da sombra");
         }
-
-
     }
 }
